@@ -1,0 +1,27 @@
+body{
+  margin-top:50px;
+}
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  padding:20px;
+  background: #0079bf;
+}
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.header .logo{
+  float:left;
+  width:130px;
+  height:40px;
+}
+.header .header__cta{
+  float:right;
+}
+.header .header__cta a{
+  margin-left:10px;
+}
