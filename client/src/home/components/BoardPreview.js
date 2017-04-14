@@ -1,14 +1,17 @@
 import React from 'react';
 
+import './BoardPreview.css';
+
 const BoardPreview = (props) => {
-  const { changeBoard } = props;
+  const { changeBoard, currentSlide, slides } = props;
   changeBoard()
-  console.log(changeBoard())
   return(
-    <div>
-      <h1>
-        THIS IS SOME BOARD
-      </h1>
+    <div className="boardPreview">
+      <div className="container">
+        <p>{slides[currentSlide].text}</p>
+        <img src={slides[currentSlide].img}/>
+      </div>
+      <CreateBoard/>
     </div>
   )
 }

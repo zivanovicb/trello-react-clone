@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Hero from './components/Hero';
 import BoardPreview from './components/BoardPreview';
 
-import boardActions from '../actions/boardActions';
+import { changeBoard } from '../actions/boardActions';
 
 class Home extends Component{
   render(){
@@ -34,7 +34,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    'changeBoard': boardActions.changeBoard
+    'changeBoard': () => {
+      dispatch(changeBoard())
+    }
+
   }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Home)

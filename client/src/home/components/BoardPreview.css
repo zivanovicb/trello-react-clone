@@ -1,0 +1,18 @@
+.boardPreview{
+  position:relative;
+  text-align: center;
+  font-size:1.3rem;
+  background:#315989;
+  color:white;
+  padding:60px 0;
+}
+.boardPreview p{
+  margin:0 auto;
+  text-align: center;
+}
+.boardPreview img{
+  border-radius:3px;
+  margin:80px 0 30px 0;
+  width:100%;
+  max-width:100%;
+}

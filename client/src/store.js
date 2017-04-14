@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
-import ReduxThunk from 'redux-thunk';
+import thunk from 'redux-thunk';
 
 
 import Boarding from './home/components/boarding.jpg';
@@ -29,11 +29,18 @@ const boardReducer = (state={
 }, action) => {
   switch(action.type){
     case 'CHANGE_BOARD':
-      state = {
-        ...state,
-        currentSlide: state.currentSlide + 1
-        // lastValues: [...state.lastValues,action.payload]
+      if(state.currentSlide == slides.length-1){
+        state = {
+          ...state,
+          currentSlide: 0
+        }
+      }else{
+        state = {
+          ...state,
+          currentSlide: state.currentSlide + 1
+        }
       }
+
       break;
     default:
       return state;
@@ -42,7 +49,8 @@ const boardReducer = (state={
 }
 const logger = createLogger()
 
-const store = createStore(boardReducer,applyMiddleware(logger,ReduxThunk));
+const store = createStore(boardReducer,applyMiddleware(logger,thunk));
+
 store.subscribe(() => {
   console.log('Store has been updated!', store.getState())
 })
