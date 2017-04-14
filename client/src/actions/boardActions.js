@@ -1,16 +1,9 @@
-const changeBoard = () => {
-  console.log('wtf')
-  return dispatch => {
-    console.log('wtf1')
+export function changeBoard(){
+  return function(dispatch){
     setTimeout(() => {
       dispatch({
         type: 'CHANGE_BOARD'
       })
-    },200)
+    },4000)
   }
 }
-
-const boardActions = {
-  changeBoard
-}
-export default boardActions
