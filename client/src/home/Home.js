@@ -6,7 +6,7 @@ import Hero from './components/Hero';
 import BoardPreview from './components/BoardPreview';
 import InformationSection from './components/InformationSection';
 import RedSection from './components/RedSection';
-
+import ProductivitySection from './components/ProductivitySection';
 import { changeBoard } from '../actions/boardActions';
 
 class Home extends Component{
@@ -25,6 +25,7 @@ class Home extends Component{
           />
         <InformationSection />
         <RedSection/>
+        <ProductivitySection />
       </div>
     )
   }

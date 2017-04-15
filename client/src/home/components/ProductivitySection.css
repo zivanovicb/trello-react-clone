@@ -1,0 +1,33 @@
+.productivitySection{
+  background: #7B8FD1;
+}
+.pc-inner{
+  color:white;
+  font-size:1.3rem;
+  content: "";
+  display: table;
+  clear: both;
+  padding: 5em;
+}
+.pc-inner h3{
+  font-size:2rem;
+  font-weight:bold;
+}
+.pc-inner .right{
+  max-width:520px;
+  padding: 2em;
+}
+.pc-inner img{
+  width:530px;
+  max-width:100%;
+}
+.pc-inner .btn {
+  background: #5e6d9b;
+}
+
+@media (max-width:540px){
+  .pc-inner{
+    text-align:center;
+    padding: 2em;
+  }
+}
