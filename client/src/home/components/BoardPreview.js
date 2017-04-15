@@ -1,7 +1,9 @@
 import React from 'react';
 
 import './BoardPreview.css';
+import CreateBoard from '../../components/CreateBoard';
 
+const CREATEBOARD_TEXT = 'From startups to Fortune 500 companies, Trello is the most visual way for teams to collaborate on any project.'
 const BoardPreview = (props) => {
   const { changeBoard, currentSlide, slides } = props;
   changeBoard()
@@ -11,7 +13,7 @@ const BoardPreview = (props) => {
         <p>{slides[currentSlide].text}</p>
         <img src={slides[currentSlide].img}/>
       </div>
-      <CreateBoard/>
+      <CreateBoard text={CREATEBOARD_TEXT}/>
     </div>
   )
 }

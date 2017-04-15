@@ -1,14 +1,13 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import './Button.css';
 
-const Button = (props) => {
-  const { background, color, children, fontWeight } = props
+const Button = ({style,children}) => (
+  <a className="btn" href="" style={style}>{children}</a>
+)
 
-  if(!fontWeight)
-    return <a className="btn" href="" style={{ 'background': background, 'color':color }}>{children}</a>
-  else if(fontWeight == 'bold')
-    return <a className="btn" href="" style={{ 'background': background, 'color':color, 'font-weight': 'bold' }}>{children}</a>
+Button.propTypes = {
+  style: PropTypes.object,
+  children: PropTypes.string.isRequired
 }
-
 export default Button;
