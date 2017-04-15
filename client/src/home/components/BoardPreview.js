@@ -6,9 +6,10 @@ import './BoardPreview.css';
 import CreateBoard from '../../components/CreateBoard';
 
 const CREATEBOARD_TEXT = 'From startups to Fortune 500 companies, Trello is the most visual way for teams to collaborate on any project.'
+
 const BoardPreview = (props) => {
   const { changeBoard, currentSlide, slides } = props;
-  changeBoard()
+  // changeBoard()
   return(
     <div className="boardPreview">
       <div className="container">

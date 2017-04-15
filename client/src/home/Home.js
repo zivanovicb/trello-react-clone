@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Hero from './components/Hero';
 import BoardPreview from './components/BoardPreview';
+import InformationSection from './components/InformationSection';
 
 import { changeBoard } from '../actions/boardActions';
 
@@ -21,6 +22,7 @@ class Home extends Component{
           currentSlide={currentSlide}
           slides={slides}
           />
+        <InformationSection />
       </div>
     )
   }
