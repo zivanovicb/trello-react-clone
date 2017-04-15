@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
+
 import './BoardPreview.css';
 import CreateBoard from '../../components/CreateBoard';
 
@@ -10,8 +12,16 @@ const BoardPreview = (props) => {
   return(
     <div className="boardPreview">
       <div className="container">
-        <p>{slides[currentSlide].text}</p>
-        <img src={slides[currentSlide].img}/>
+        <CSSTransitionGroup
+          transitionName="example"
+          transitionEnterTimeout={3000}
+          transitionLeaveTimeout={1000}>
+
+          <div key={slides[currentSlide].key}>
+            <p>{slides[currentSlide].text}</p>
+            <img src={slides[currentSlide].img}/>
+          </div>
+        </CSSTransitionGroup>
       </div>
       <CreateBoard text={CREATEBOARD_TEXT}/>
     </div>

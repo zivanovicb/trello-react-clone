@@ -10,15 +10,18 @@ import Sales from './home/components/sales.jpg';
 const slides = [
   {
     text: 'The Marketing Team moves blog content through the editorial calendar all the way from "Writing" to "Published".',
-    img: Marketing
+    img: Marketing,
+    key: 0
   },
   {
     text: 'Onboarding new employees is easy for the People Team since they share orientation details directly on a Trello board.',
-    img: Boarding
+    img: Boarding,
+    key: 1
   },
   {
     text: 'The Sales Team updates the status of leads directly in the sales pipeline for all to see.',
-    img: Sales
+    img: Sales,
+    key: 2
   }
 ]
 
