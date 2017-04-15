@@ -1,0 +1,38 @@
+.redSection{
+  background: #EB5A46;
+}
+.rs-inner{
+  color:white;
+  font-size:1.3rem;
+  content: "";
+  display: table;
+  clear: both;
+  padding: 5em;
+}
+.rs-inner h3{
+  font-size:2rem;
+  margin:1em 0;
+  font-weight: bold;
+}
+.redSection .left{
+  max-width:520px;
+  padding:2em 0;
+}
+.redSection img{
+  width:100%;
+  max-width:846px;
+}
+@media (max-width:1395px){
+  .rs-inner{
+    text-align:center;
+  }
+  .rs-inner .left{
+    max-width:100%;
+  }
+}
+
+@media (max-width:605px){
+  .rs-inner{
+    padding: 2em;
+  }
+}

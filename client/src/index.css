@@ -30,6 +30,13 @@ a:hover{
   text-decoration: none;
 }
 
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
+
 /* React Transitions */
 
 .example-enter {
