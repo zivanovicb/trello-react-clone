@@ -7,6 +7,8 @@ import BoardPreview from './components/BoardPreview';
 import InformationSection from './components/InformationSection';
 import RedSection from './components/RedSection';
 import ProductivitySection from './components/ProductivitySection';
+import MobileSection from './components/MobileSection';
+
 import { changeBoard } from '../actions/boardActions';
 
 class Home extends Component{
@@ -26,6 +28,7 @@ class Home extends Component{
         <InformationSection />
         <RedSection/>
         <ProductivitySection />
+        <MobileSection />
       </div>
     )
   }
