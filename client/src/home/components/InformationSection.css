@@ -1,0 +1,21 @@
+.information-section{
+  font-size:1.1rem;
+  color:white;
+  text-align: center;
+  background:linear-gradient(0deg, #f06e47, #ffab4a);;
+  padding-top:3em;
+}
+
+.information-section h3{
+  font-weight:bold;
+  font-size: 1.9em;
+}
+
+.information-section p{
+  margin-bottom:2em;
+}
+
+.information-section img{
+  width:100%;
+  max-width:730px;
+}
