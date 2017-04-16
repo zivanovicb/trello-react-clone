@@ -10,8 +10,12 @@ const Header = ({color}) => (
   <div className="header">
     <img className="logo" src={Logo} alt="Trello logo"/>
     <div className="header__cta">
-      <Button background="blue">Log In</Button>
-      <Button background="green">Register</Button>
+      <Button
+        background="blue"
+        href="/login">Log In</Button>
+      <Button
+        background="green"
+        href="/register">Register</Button>
     </div>
   </div>
 )

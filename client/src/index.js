@@ -4,6 +4,7 @@ import App from './App';
 
 import './index.css';
 import Home from './home/Home';
+import Login from './auth/Login';
 
 import store from './store';
 import { Provider } from 'react-redux';
@@ -19,6 +20,7 @@ const Routing = () => (
     <Router>
       <div>
         <Route exact path="/"  component={Home}/>
+        <Route exact path="/login"  component={Login}/>
       </div>
     </Router>
   </Provider>
