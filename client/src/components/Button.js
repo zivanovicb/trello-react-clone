@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css';
 
-const Button = ({style,children}) => (
-  <a className="btn" href="" style={style}>{children}</a>
+const Button = ({background,children}) => (
+  <a className={`btn btn-${background}`} href="" >{children}</a>
 )
 
 Button.propTypes = {
-  style: PropTypes.object,
+  background: PropTypes.oneOf(['green','blue','red','purple']),
   children: PropTypes.string.isRequired
 }
 export default Button;

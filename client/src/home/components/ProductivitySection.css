@@ -21,9 +21,7 @@
   width:530px;
   max-width:100%;
 }
-.pc-inner .btn {
-  background: #5e6d9b;
-}
+
 
 @media (max-width:540px){
   .pc-inner{

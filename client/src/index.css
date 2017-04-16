@@ -26,9 +26,11 @@ a{
   display:inline-block;
 }
 
-a:hover{
+a:hover,
+a.btn:hover,
+.btn{
   text-decoration: none;
-  /*background-color: rgba(0,0,0,0.25);*/
+  color:white;
 }
 
 .left{

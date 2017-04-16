@@ -6,11 +6,6 @@ import colors from '../../components/colors';
 
 import './ProductivitySection.css';
 
-const buttonStyles = {
-  background: colors.darkpurple,
-  color: 'white',
-  margin: '10px 0'
-}
 const ProductivitySection = (props) => (
   <div className="productivitySection">
     <div className="container-fluid pc-inner">
@@ -20,7 +15,7 @@ const ProductivitySection = (props) => (
       <div className="right">
         <h3>A Productivity Platform</h3>
         <p>Integrate the apps your team already uses directly into your workflow. Power-Ups turn Trello boards into living applications to meet your team's unique business needs.</p>
-        <Button style={buttonStyles}>Power-Up your workflow!</Button>
+        <Button background="purple">Power-Up your workflow!</Button>
       </div>
     </div>
   </div>
