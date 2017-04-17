@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css';
 
-const Button = ({background,children,href}) => (
-  <a className={`btn btn-${background}`} href={href} >{children}</a>
+const Button = ({background,children,href,style}) => (
+  <a style={style || {}} className={`btn btn-${background}`} href={href} >{children}</a>
 )
 
 Button.propTypes = {

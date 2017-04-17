@@ -1,0 +1,51 @@
+.login{
+  font-size:1.2rem;
+}
+.login a{
+  text-decoration: underline;
+}
+.login a.btn{
+  text-decoration: none;
+}
+.login a.btn:hover{
+  color:white;
+}
+.login a:hover{
+  color:blue;
+}
+.login h1{
+  font-size:3rem;
+  font-weight:bold;
+}
+.loginForm{
+  margin:30px 0;
+}
+.login input[type="text"],
+.login input[type="password"]{
+  border:0;
+  border-radius:3px;
+  border:1px solid #ccc;
+  background:#EDEFF0;
+  padding:10px 20px 10px 3px;
+  min-width:300px;
+}
+
+.submitArea{
+  content: "";
+  display: table;
+  clear: both;
+  margin:20px 0;
+}
+.submitArea > *{
+  float:left;
+}
+
+.submitArea p{
+  padding:1em;
+}
+
+
+
+.googleLogin .bold{
+  font-weight:bold;
+}
