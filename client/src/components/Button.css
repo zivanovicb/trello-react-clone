@@ -29,8 +29,17 @@
   background:#FFA793;
 }
 
+.btn-grey{
+  background:#96989A;
+}
 .btn-purple{
   background:#455482;
+}
+
+/* Register page grey button only */
+
+.register .btn-grey{
+  color:#636567;
 }
 
 .btn-purple:hover{

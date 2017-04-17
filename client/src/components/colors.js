@@ -7,7 +7,9 @@ const colors = {
   'red': '#EB5A46',
   'lightred': '#edb4ad',
   'purple': '#7B8FD1',
-  'darkpurple': '#455482'
+  'darkpurple': '#455482',
+  'grey': '#96989A',
+  'darkgrey': '#636567'
 }
 
 export default colors;

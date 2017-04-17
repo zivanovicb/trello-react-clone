@@ -7,7 +7,7 @@ const Button = ({background,children,href,style}) => (
 )
 
 Button.propTypes = {
-  background: PropTypes.oneOf(['green','blue','red','purple']),
+  background: PropTypes.oneOf(['green','blue','red','purple','grey']),
   children: PropTypes.string.isRequired,
   href: PropTypes.string
 }
