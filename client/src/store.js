@@ -3,58 +3,83 @@ import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 
 
-import Boarding from './home/components/boarding.jpg';
-import Marketing from './home/components/marketing.jpg';
-import Sales from './home/components/sales.jpg';
+// const boardReducer = (state={
+//   slides,
+//   currentSlide: 0,
+//   lastValues: []
+// }, action) => {
+//   switch(action.type){
+//     case 'CHANGE_BOARD':
+//       if(state.currentSlide == slides.length-1){
+//         state = {
+//           ...state,
+//           currentSlide: 0
+//         }
+//       }else{
+//         state = {
+//           ...state,
+//           currentSlide: state.currentSlide + 1
+//         }
+//       }
+//
+//       break;
+//     default:
+//       return state;
+//   }
+//   return state;
+// }
+const logger = createLogger()
 
-const slides = [
-  {
-    text: 'The Marketing Team moves blog content through the editorial calendar all the way from "Writing" to "Published".',
-    img: Marketing,
-    key: 0
-  },
-  {
-    text: 'Onboarding new employees is easy for the People Team since they share orientation details directly on a Trello board.',
-    img: Boarding,
-    key: 1
-  },
-  {
-    text: 'The Sales Team updates the status of leads directly in the sales pipeline for all to see.',
-    img: Sales,
-    key: 2
-  }
-]
+const registerFormInitialState = {
+  name: false,
+  email: false,
+  password: false
+}
 
-const boardReducer = (state={
-  slides,
-  currentSlide: 0,
-  lastValues: []
-}, action) => {
+const registerFormReducer = (state=registerFormInitialState,action) => {
   switch(action.type){
-    case 'CHANGE_BOARD':
-      if(state.currentSlide == slides.length-1){
-        state = {
-          ...state,
-          currentSlide: 0
-        }
-      }else{
-        state = {
-          ...state,
-          currentSlide: state.currentSlide + 1
-        }
+    case 'VALIDATED_NAME':
+      state = {
+        ...state,
+        name: true
       }
+      break;
 
+    case 'VALIDATED_EMAIL':
+      state = {
+        ...state,
+        email: true
+      }
+      break;
+    case 'VALIDATED_PASSWORD':
+      state = {
+        ...state,
+        password: true
+      }
+      break;
+    case 'INVALID_NAME':
+      state = {
+        ...state,
+        name: false
+      }
+      break;
+    case 'INVALID_EMAIL':
+      state = {
+        ...state,
+        email: false
+      }
+      break;
+    case 'INVALID_PASSWORD':
+      state = {
+        ...state,
+        password: false
+      }
       break;
     default:
-      return state;
+      return state
   }
   return state;
 }
-const logger = createLogger()
+const store = createStore(registerFormReducer,applyMiddleware(logger));
 
-const store = createStore(boardReducer,applyMiddleware(logger,thunk));
-
-store.subscribe(() => {
-  console.log('Store has been updated!', store.getState())
-})
 export default store;

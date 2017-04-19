@@ -14,7 +14,15 @@ export default class RegisterNameField extends Component{
   }
 
   onValueChange(value){
+    const {validate,unvalidate} = this.props
     const error = this.getErrorMessage(value)
+    if(error){
+      unvalidate()
+    }
+    if(!error){
+      validate()
+    }
+    
     this.setState({value,error})
   }
 

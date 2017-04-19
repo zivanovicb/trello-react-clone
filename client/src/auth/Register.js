@@ -4,9 +4,7 @@ import RegisterForm from './RegisterForm';
 import './Register.css';
 
 export default class Register extends Component{
-  getErrorMessage = value => {
-    console.log(value)
-  }
+
   render(){
     return(
       <div className="register auth">
