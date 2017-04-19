@@ -12,7 +12,7 @@ export default class PasswordField extends Component{
     this.onValueChange(value)
   }
 
-  onValueChange(value = this.state.value){
+  onValueChange(value){
     const error = this.getErrorMessage(value)
     this.setState({
       value,
@@ -36,32 +36,25 @@ export default class PasswordField extends Component{
     const {error} = this.state
     return(
       <div>
-        {error ? (
-          <div>
-            <p>Password</p>
-            <div className="fieldWrapper">
-              <input
-                type="password"
-                placeholder="e.g., ••••••••••••"
-                onChange={this.handleChange}
-              />
-              <div className="fieldTip">
-                {error}
-              </div>
+        <p>Password</p>
+        <div className="fieldWrapper">
+          <input
+            type="password"
+            placeholder="e.g., ••••••••••••"
+            onChange={this.handleChange}
+          />
+          { error ? (
+            <div className="fieldTip">
+              {error}
             </div>
-          </div>
 
-        ) : (
-          <div>
-            <p>Password</p>
-            <input
-              type="password"
-              placeholder="e.g., ••••••••••••"
-              onChange={this.handleChange}
-            />
-          </div>
-        )
-      }
+          ) : (
+            null
+          )
+          }
+        </div>
+
+
       </div>
     )
   }

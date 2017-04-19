@@ -5,7 +5,7 @@ export default class RegisterNameField extends Component{
 
   state = {
     value: '',
-    error: ''
+    error: null
   }
 
   handleChange = event => {
@@ -36,33 +36,25 @@ export default class RegisterNameField extends Component{
   render(){
     const {error} = this.state
     return(
-      <div>
-        { error ? (
-          <div>
-            <p>Email</p>
+        <div>
+          <p>Email</p>
+          <div className="fieldWrapper">
             <input
               type="email"
               placeholder="e.g., zivanovic.b1@hotmail.com"
               onChange={this.handleChange}
               onBlur={this.handleBlur}
             />
-            <div className="fieldTip">
-              {error}
-            </div>
-          </div>
+            {error ? (
+              <div className="fieldTip">
+                {error}
+              </div>
 
-        ) : (
-          <div>
-            <p>Email</p>
-            <input
-              type="email"
-              placeholder="e.g., zivanovic.b1@hotmail.com"
-              onChange={this.handleChange}
-              onBlur={this.handleBlur}
-            />
+            ) : (null)}
+
           </div>
-        )}
-      </div>
+        </div>
+
     )
   }
 }
