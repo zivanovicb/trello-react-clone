@@ -31,6 +31,13 @@
   padding:10px 20px 10px 3px;
   min-width:300px;
 }
+.auth input[type="text"]:focus,
+.auth input[type="password"]:focus,
+.auth input[type="email"]:focus{
+  border-color:#a5acb0;
+  color:#a5acb0;
+  box-shadow: 0 0 6px #cdd2d4;
+}
 
 
 .submitArea{

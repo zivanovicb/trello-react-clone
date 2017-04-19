@@ -7,7 +7,19 @@
 .register .btn-grey{
   font-size:1.2rem;
 }
-
+.register .fieldWrapper{
+  overflow:auto;
+}
+.register .fieldWrapper > *{
+  float:left;
+}
+.register .fieldTip{
+  margin-left:1.1em;
+}
+.register .fieldTip{
+  margin:0 0 0 1em;
+  line-height: 2.3;
+}
 @media (min-width:1000px){
   .register .terms{
     max-width:700px;
