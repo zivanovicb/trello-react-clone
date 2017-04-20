@@ -8,11 +8,16 @@ var app = require('../app');
 var debug = require('debug')('server:server');
 var http = require('http');
 
+var fs    = require('fs'),
+     nconf = require('nconf');
+
+
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+// var port = normalizePort(process.env.PORT || '3000');
+var port = nconf.get('http:port')
 app.set('port', port);
 
 /**
