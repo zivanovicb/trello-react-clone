@@ -19,7 +19,7 @@ import {
 
 class RegisterForm extends Component{
 
-  // If field is validated, property is TRUE
+  // If field is validated, prop is true
   state = {
       name: false,
       email: false,
@@ -27,9 +27,7 @@ class RegisterForm extends Component{
   }
   componentWillReceiveProps(nextProps){
     this.setState({
-      name: nextProps.state.name,
-      email: nextProps.state.email,
-      password: nextProps.state.password
+      ...nextProps.state
     })
   }
   render(){
