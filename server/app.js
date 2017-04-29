@@ -8,6 +8,13 @@ var fs    = require('fs'),
      nconf = require('nconf');
 var passport = require('passport');
 
+// React related things
+import React from 'react';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from '../client/src/reducers/registerFormReducer';
+import App from '../client/src/index.js';
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
@@ -38,6 +45,7 @@ app.use('/',auth);
 //   2. Environment variables
 //   3. A file located at 'path/to/config.json'
 //
+
 nconf.argv()
  .env()
  .file({ file: './config.json' });
