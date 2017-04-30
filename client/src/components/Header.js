@@ -3,12 +3,14 @@ import './Header.css';
 
 import Button from './Button';
 
-import Logo from './logo.svg';
+import Logo from '../Logo';
 import colors from './colors';
 
 const Header = ({color}) => (
   <div className="header">
-    <img className="logo" src={Logo} alt="Trello logo"/>
+    <div className="logo">
+      <Logo/>
+    </div>
     <div className="header__cta">
       <Button
         background="blue"

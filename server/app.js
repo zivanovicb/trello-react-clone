@@ -12,8 +12,8 @@ var passport = require('passport');
 import React from 'react';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from '../client/src/reducers/registerFormReducer';
-import App from '../client/src/index.js';
+// import reducer from '../client/src/reducers/registerFormReducer';
+// import App from '../client/src/index.js';
 
 var index = require('./routes/index');
 var users = require('./routes/users');

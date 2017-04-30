@@ -33,3 +33,5 @@ ReactDOM.render(
   <Routing/>,
   document.getElementById('root')
 );
+
+export default Routing;
