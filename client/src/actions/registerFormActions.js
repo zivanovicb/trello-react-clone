@@ -4,15 +4,17 @@ export function validateName(){
   }
 }
 
-export function validateEmail(){
+export function validateEmail(val){
   return {
-    type: 'VALIDATED_EMAIL'
+    type: 'VALIDATED_EMAIL',
+    val
   }
 }
 
-export function validatePassword(){
+export function validatePassword(val){
   return {
-    type: 'VALIDATED_PASSWORD'
+    type: 'VALIDATED_PASSWORD',
+    val
   }
 }
 export function unvalidateName(){

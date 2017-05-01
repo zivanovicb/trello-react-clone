@@ -20,9 +20,9 @@ export default class RegisterNameField extends Component{
       unvalidate()
     }
     if(!error){
-      validate()
+      validate(value)
     }
-    
+
     this.setState({value,error})
   }
 

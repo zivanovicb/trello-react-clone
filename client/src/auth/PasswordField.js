@@ -19,7 +19,7 @@ export default class PasswordField extends Component{
       unvalidate()
     }
     if(!error){
-      validate()
+      validate(value)
     }
     this.setState({
       value,

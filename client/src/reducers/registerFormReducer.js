@@ -1,20 +1,28 @@
 const registerFormInitialState = {
   name: false,
   email: false,
-  password: false
+  password: false,
+  emailVal: '',
+  passwordVal: ''
 }
 
 const registerFormReducer = (state=registerFormInitialState,action) => {
   switch(action.type){
     case 'VALIDATED_NAME':
-      state = Object.assign({},state,{name:true})
+      state = Object.assign({},state,{
+        name:true
+      })
       break;
 
     case 'VALIDATED_EMAIL':
-      state = Object.assign({},state,{email:true})
+      state = Object.assign({},state,{
+        email:true,
+        emailVal: action.val})
       break;
     case 'VALIDATED_PASSWORD':
-      state = Object.assign({},state,{password:true})
+      state = Object.assign({},state,{
+        password:true,
+        passwordVal: action.val})
       break;
     case 'INVALID_NAME':
       state = Object.assign({},state,{name:false})

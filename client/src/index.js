@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
@@ -15,6 +15,11 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+
+import * as firebase from 'firebase';
+import config from './firebaseConfig';
+
+let app = firebase.initializeApp(config);
 
 const Routing = () => (
   <Provider store={store}>
