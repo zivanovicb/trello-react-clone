@@ -28,7 +28,7 @@ function renderFullPage(html){
 /* GET home page. */
 router.get('/', function(req, res, next) {
   const store = createStore(registerFormReducer);
-  var reactApp = ReactDOMServer.renderToString(elem)
+  var reactApp = ReactDOMServer.renderToString(App)
   // res.render('index', { body: reactApp});
   res.send(renderFullPage(reactApp))
 });
