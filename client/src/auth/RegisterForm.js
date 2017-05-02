@@ -33,15 +33,24 @@ class RegisterForm extends Component{
   }
 
   handleSubmit = event => {
-    const { emailVal,passwordVal } = this.state
+    const { emailVal,passwordVal,name } = this.state
     event.preventDefault();
     if(this.handleDisabled()){
-      // TODO: Show an error
+      // Do nothing. If button is not disabled, create user profile
     }else{
       firebase
         .auth()
         .createUserWithEmailAndPassword(emailVal, passwordVal)
-        .then(() => {console.log('success')})
+        .then(() => {
+          const user = firebase.auth().currentUser;
+          user.updateProfile({
+            displayName: name
+          }).then(() => {
+            alert('success')
+          }).catch(() => {
+            alert('failure')
+          })
+        })
         .catch(function(error) {
           // Handle Errors here.
           var errorCode = error.code;
