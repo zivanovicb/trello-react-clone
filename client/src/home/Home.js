@@ -15,7 +15,7 @@ class Home extends Component{
   render(){
     const { changeBoard } = this.props
     const { currentSlide, slides } = this.props.state
-
+    
     return(
       <div style={{ 'width': '100%', 'max-width':'100%'}}>
         <Header/>
