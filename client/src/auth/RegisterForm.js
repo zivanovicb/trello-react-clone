@@ -18,13 +18,22 @@ import {
   unvalidatePassword,
 } from '../actions/registerFormActions';
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from 'react-router-dom'
+
 class RegisterForm extends Component{
 
   // If field is validated, prop is true
   state = {
       name: false,
       email: false,
-      password: false
+      password: false,
+      hasRegistered: false
   }
   componentWillReceiveProps(nextProps){
     this.setState({
@@ -46,9 +55,10 @@ class RegisterForm extends Component{
           user.updateProfile({
             displayName: name
           }).then(() => {
-            alert('success')
+            // TODO: If user has registered successfully
+            this.setState({hasRegistered:true})
           }).catch(() => {
-            alert('failure')
+            // TODO: Return 404 or ..
           })
         })
         .catch(function(error) {
@@ -69,8 +79,11 @@ class RegisterForm extends Component{
     }
   }
   render(){
-    const {name,email,password} = this.state
-    console.log(this.state)
+    const {name,email,password,hasRegistered} = this.state
+
+    if(hasRegistered){
+      return <Redirect to="/"/>
+    }
     return(
       <form onSubmit={this.handleSubmit}>
         <NameField validate={this.props.validateName} unvalidate={this.props.unvalidateName}/>
