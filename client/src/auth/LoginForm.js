@@ -25,13 +25,26 @@ export default class LoginForm extends Component{
     errorMessage: '',
     isAuthenticated: false
   }
+  constructor(){
+    super()
+    this.isAuthenticated()
+  }
+  isAuthenticated = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      if(user){
+        this.setState({isAuthenticated:true})
+      }else{
+        this.setState({isAuthenticated:false})
+      }
+    })
+  }
+
   onSubmit(email,password){
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        // Success
-        this.setState({isAuthenticated: true})
+          // Success
       }).catch((error) => {
         this.setState({error: true,errorMessage: error.message})
       });
@@ -62,38 +75,40 @@ export default class LoginForm extends Component{
     this.setState({password: value})
   }
 
+
   render(){
     const {error,errorMessage,isAuthenticated} = this.state
-    
+    console.log(isAuthenticated)
     if(error){
       alert(errorMessage)
     }
-    if(isAuthenticated){
-      return <Redirect to='/'/>
-    }
     return(
-      <form className="loginForm" onSubmit={this.handleSubmit}>
-        <p>Email: <span>(or username)</span></p>
-        <input
-          type="text"
-          name="username"
-          placeholder="e.g., zivanovic.b1@hotmail.com"
-          onChange={this.handleEmailUsernameChange}/>
+      <div>
+        { isAuthenticated ? <Redirect to ='/'/>: (
+          <form className="loginForm" onSubmit={this.handleSubmit}>
+            <p>Email: <span>(or username)</span></p>
+            <input
+              type="text"
+              name="username"
+              placeholder="e.g., zivanovic.b1@hotmail.com"
+              onChange={this.handleEmailUsernameChange}/>
 
-        <p>Password</p>
-        <input
-          type="password"
-          name="password"
-          placeholder="e.g., **********"
-          onChange={this.handlePasswordChange}/>
+            <p>Password</p>
+            <input
+              type="password"
+              name="password"
+              placeholder="e.g., **********"
+              onChange={this.handlePasswordChange}/>
 
-        <div className="submitArea">
-          <Button background="green" href="/login" type="submit">Log In</Button>
-          <p>Forgot your password? <a href="/reset">Reset it.</a></p>
-        </div>
-        <GoogleLogin/>
+            <div className="submitArea">
+              <Button background="green" href="/login" type="submit">Log In</Button>
+              <p>Forgot your password? <a href="/reset">Reset it.</a></p>
+            </div>
+            <GoogleLogin/>
 
-      </form>
+          </form>
+        )}
+      </div>
 
     )
   }

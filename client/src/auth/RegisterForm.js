@@ -33,8 +33,23 @@ class RegisterForm extends Component{
       name: false,
       email: false,
       password: false,
-      hasRegistered: false
+      hasRegistered: false,
+      isAuthenticated: false
   }
+  constructor(){
+    super()
+    this.isAuthenticated()
+  }
+  isAuthenticated = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      if(user){
+        this.setState({isAuthenticated:true})
+      }else{
+        this.setState({isAuthenticated:false})
+      }
+    })
+  }
+
   componentWillReceiveProps(nextProps){
     this.setState({
       ...nextProps.state
@@ -79,9 +94,9 @@ class RegisterForm extends Component{
     }
   }
   render(){
-    const {name,email,password,hasRegistered} = this.state
+    const {name,email,password,hasRegistered,isAuthenticated} = this.state
 
-    if(hasRegistered){
+    if(hasRegistered || isAuthenticated){
       return <Redirect to="/"/>
     }
     return(
