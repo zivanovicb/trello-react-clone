@@ -34,16 +34,6 @@ const BoardPreview = (props) => {
   return(
     <div className="boardPreview">
       <div className="container">
-        <CSSTransitionGroup
-          transitionName="example"
-          transitionEnterTimeout={3000}
-          transitionLeaveTimeout={1000}>
-
-          {/* <div key={slides[currentSlide].key}>
-            <p>{slides[currentSlide].text}</p>
-            <img src={slides[currentSlide].img}/>
-          </div> */}
-        </CSSTransitionGroup>
       </div>
       <CreateBoard text={CREATEBOARD_TEXT}/>
     </div>

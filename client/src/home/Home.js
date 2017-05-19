@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as firebase from 'firebase';
+import ReactCursorPosition from 'react-cursor-position';
+
+
 
 import Header from '../components/Header';
 import Hero from './components/Hero';
@@ -14,7 +17,11 @@ import { changeBoard } from '../actions/boardActions';
 
 class Home extends Component{
   state = {
-    isAuthenticated: false
+    isAuthenticated: false,
+    position: {
+      x: 0,
+      y: 0
+    }
   }
   constructor(){
     super()
@@ -31,21 +38,27 @@ class Home extends Component{
     })
   }
 
+  onPositionChanged = (props) => {
+    console.log(this.state)
+    this.setState({...props})
+  }
   render(){
     const { changeBoard } = this.props
     const { currentSlide, slides} = this.props.state
-    const { isAuthenticated } = this.state
+    const { isAuthenticated,position } = this.state
 
     return(
       <div style={{ 'width': '100%', 'max-width':'100%'}}>
-        <Header user={isAuthenticated}/>
-        <Hero/>
+        <ReactCursorPosition onPositionChanged={this.onPositionChanged} >
+          <Header user={isAuthenticated}/>
+          <Hero/>
+          <InformationSection position={position} />
+        </ReactCursorPosition>
         <BoardPreview
           changeBoard={changeBoard}
           currentSlide={currentSlide}
           slides={slides}
           />
-        <InformationSection />
         <RedSection/>
         <ProductivitySection />
         <MobileSection />

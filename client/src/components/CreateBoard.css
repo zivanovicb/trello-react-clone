@@ -1,9 +1,6 @@
 .createBoard{
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  padding:60px 0;
+  position:relative;
+  padding:40px 0;
 }
 .createBoard .bg{
   position:absolute;
