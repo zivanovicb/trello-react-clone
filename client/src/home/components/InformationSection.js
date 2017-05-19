@@ -7,7 +7,6 @@ import {Motion, spring,presets} from 'react-motion';
 
 class InformationSection extends Component{
     _w = screen.width;
-
     render(){
       return(
         <div>
